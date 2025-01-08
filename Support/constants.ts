@@ -50,7 +50,7 @@ type BrowserType = 'chrome' | 'firefox' | 'webkit' | 'safari';
 const urls: Urls =
  {
     AdminUrl: 'http://127.0.0.1:5000/',
-    CilentUrl: 'https://jqueryui.com/datepicker/',
+    CilentUrls: 'https://jqueryui.com/datepicker/',
 };
 
 // Define the locators constant with the proper type
