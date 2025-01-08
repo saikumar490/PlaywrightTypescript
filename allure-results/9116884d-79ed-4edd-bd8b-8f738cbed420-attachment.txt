@@ -1,0 +1,13 @@
+Clicked on element with locator: //input[@value='Login']
+Option with label "Female" has been selected in the dropdown.
+Clicked on element with locator: //a[normalize-space()='Next']
+Clicked on element with locator: //button[@id='addRiskButton']
+Option with label "Comprehensive" has been selected in the dropdown.
+Option with label "Hybrid" has been selected in the dropdown.
+Clicked on element with locator: //button[@type='submit']
+Clicked on element with locator: //a[normalize-space()='Next']
+Clicked on element with locator: #addDriverButton
+Option with label "Owner" has been selected in the dropdown.
+Option with label "Male" has been selected in the dropdown.
+Clicked on element with locator: //button[@type='submit']
+Clicked on element with locator: //a[normalize-space()='Next']

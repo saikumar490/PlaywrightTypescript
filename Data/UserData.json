@@ -1,0 +1,69 @@
+[
+  {
+      "username": "QALevel1",
+      "password": "test22",
+      "ClientDetails": [
+          {
+              "FirstName": "John",
+              "LastName": "Doe",
+              "DateofBirth": "1990-05-15",
+              "Gender": "Male",
+              "MobileNumber": "0987654321",
+              "Email": "john.doe@example.com"
+          }
+      ],
+      "RiskDetaild": [{
+              "CoverData": "Third Party Only",
+              "VehicleMake": "Toyota",
+              "VehicleModel": "Corolla",
+              "VehicleType": "Sedan",
+              "VehicleYear": "2021",
+              "Enginesize": "1800",
+              "FuelType": "Gas"
+          }],
+
+      "DriverDetails":[{
+              "Drivertype": "Owner",
+              "DriversName": "Sarah White",
+              "DateofBirth": "1985-07-22",
+              "Drivingexperience": "10",
+              "Licensenumber": "78901234",
+              "DriversGender": "Female"
+          }]
+  },
+  {
+    "username": "QALevel2",
+    "password": "test22",
+      "ClientDetails": [
+          {
+              "FirstName": "Alice",
+              "LastName": "Smith",
+              "DateofBirth": "1992-03-18",
+              "Gender": "Female",
+              "MobileNumber": "0234567890",
+              "Email": "alice.smith@example.com"
+          }
+      ],
+      "RiskDetaild": [
+          {
+              "CoverData": "Comprehensive",
+              "VehicleMake": "Honda",
+              "VehicleModel": "Civic",
+              "VehicleType": "Sedan",
+              "VehicleYear": "2020",
+              "Enginesize": "1600",
+              "FuelType": "Hybrid"
+          }
+      ],
+      "DriverDetails": [
+          {
+              "Drivertype": "Owner",
+              "DriversName": "Mark Lee",
+              "DateofBirth": "1993-11-09",
+              "Drivingexperience": "7",
+              "Licensenumber": "45678901",
+              "DriversGender": "Male"
+          }
+      ]
+  }
+]
