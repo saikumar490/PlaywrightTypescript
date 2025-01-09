@@ -1,0 +1,1 @@
+Clicked on element with locator: //input[@value='Login']

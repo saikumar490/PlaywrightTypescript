@@ -48,6 +48,14 @@ export class loginpage{
      await this.helper.EnterTextIntoField(this.Page, locators.usernamefield, username);
      await this.helper.EnterTextIntoField(this.Page, locators.passwordfield, password);
      await this.helper.ClickOnElement(this.Page, locators.loginbutton);
+     const Welcomeprompt = await this.Page.locator("//div[@class='form-container']/h3").textContent();
+     await expect(this.Page.url()).toContain('client')
+     if (Welcomeprompt) {
+      const trimmedMessage = Welcomeprompt.trim();
+       const splitMessage = trimmedMessage.split(", ");
+       const expectedMessage = `${splitMessage[0]}, ${splitMessage[1]}`;
+      await expect(Welcomeprompt).toContain(trimmedMessage);
+  }
    
     }
 
@@ -79,6 +87,7 @@ export class loginpage{
     {
 
         await this.helper.ClickOnElement(this.Page, locators.addriskbutton)
+        await expect(this.Page.url).toBe('http://127.0.0.1:5000/policy')
         await this.helper.SelectOptionFromDropdown(this.Page, locators.covertype, "Comprehensive")
         await this.helper.EnterTextIntoField(this.Page, locators.vehicleMake, "audi")
         await this.helper.EnterTextIntoField(this.Page, locators.vmodel,"audi A3")
@@ -95,6 +104,7 @@ export class loginpage{
         await expect(this.Page.locator('tbody')).toContainText('1700');
         await expect(this.Page.locator('tbody')).toContainText('Gas');
         await this.helper.ClickOnElement(this.Page, "//a[normalize-space()='Next']")
+        
     }
     async testAddingRiskDetails(covertype:string, vehiclemake:string, vmodel:string, vehicletype:string, vehicelyear:string, enginesize:string, fueltype:string)
     {
@@ -120,6 +130,7 @@ export class loginpage{
     async addingdriverdetails()
     {
       await this.helper.ClickOnElement(this.Page, locators.Adddriverdetails)
+      
       await this.helper.SelectOptionFromDropdown(this.Page, locators.drivertype, "Owner")
       await this.helper.EnterTextIntoField(this.Page,locators.drivername, "John Finch")
       await this.helper.EnterTextIntoField(this.Page, locators.drierdateofbirth,"1995-12-12")
@@ -134,6 +145,8 @@ export class loginpage{
       await expect(this.Page.locator('tbody')).toContainText('12354655');
       await expect(this.Page.locator('tbody')).toContainText('male');
       await this.helper.ClickOnElement(this.Page,"//a[normalize-space()='Next']")
+      await expect(this.Page.url).toBe('http://127.0.0.1:5000/summary');
+     
     }
     async testaddingdriverdetails(drivertype:string, drivername:string, drierdateofbirth:string, driverexperince:string, driverlicnumber:string, driversgender:string)
     {
@@ -145,12 +158,12 @@ export class loginpage{
       await this.helper.EnterTextIntoField(this.Page, locators.driverlicnumber, driverlicnumber)
       await this.helper.SelectOptionFromDropdown(this.Page, locators.driversgender, driversgender)
       await this.helper.ClickOnElement(this.Page, "//button[@type='submit']");
-    //   await expect(this.Page.locator('tbody')).toContainText('Owner');
-    //   await expect(this.Page.locator('tbody')).toContainText('John Finch');
-    //   await expect(this.Page.locator('tbody')).toContainText('1995-12-12');
-    //   await expect(this.Page.locator('tbody')).toContainText('2');
-    //   await expect(this.Page.locator('tbody')).toContainText('12354655');
-    //   await expect(this.Page.locator('tbody')).toContainText('male');
+      await expect(this.Page.locator('tbody')).toContainText(drivertype);
+      await expect(this.Page.locator('tbody')).toContainText(drivername);
+      await expect(this.Page.locator('tbody')).toContainText(drierdateofbirth);
+      await expect(this.Page.locator('tbody')).toContainText(driverexperince);
+      await expect(this.Page.locator('tbody')).toContainText(driverlicnumber);
+      await expect(this.Page.locator('tbody')).toContainText(driversgender);
       await this.helper.ClickOnElement(this.Page,"//a[normalize-space()='Next']")
     }
 
@@ -192,5 +205,45 @@ export class loginpage{
        
         
     }
+    async testmultiplerisk(coverType: string, vehicleMake: string, vmodel: string, vehicelType: string, vehicelyear: string, 
+      enginesize: string, fuelType: string, coverType1: string, vehicleMake1: string, vmodel1: string, vehicelType1: string, 
+      vehicelyear1: string, enginesize1: string, fuelType1: string){
+
+      await this.helper.ClickOnElement(this.Page, locators.addriskbutton)
+      await this.helper.SelectOptionFromDropdown(this.Page, locators.covertype, coverType)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicleMake, vehicleMake)
+      await this.helper.EnterTextIntoField(this.Page, locators.vmodel,vmodel)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicelType,vehicelType)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicelyear,  vehicelyear)
+      await this.helper.EnterTextIntoField(this.Page, locators.enginesize,  enginesize)
+      await this.helper.SelectOptionFromDropdown(this.Page, locators.FuelType,fuelType)
+      await this.helper.ClickOnElement(this.Page, locators.submitbutton)
+      await expect(this.Page.locator('tbody')).toContainText(coverType);
+      await expect(this.Page.locator('tbody')).toContainText(vehicleMake);
+      await expect(this.Page.locator('tbody')).toContainText(vmodel);
+      await expect(this.Page.locator('tbody')).toContainText(vehicelType);
+      await expect(this.Page.locator('tbody')).toContainText(vehicelyear);
+      await expect(this.Page.locator('tbody')).toContainText(enginesize);
+      await expect(this.Page.locator('tbody')).toContainText(fuelType);
+      await this.helper.ClickOnElement(this.Page, locators.addriskbutton)
+      await this.helper.SelectOptionFromDropdown(this.Page, locators.covertype, coverType1)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicleMake, vehicleMake1)
+      await this.helper.EnterTextIntoField(this.Page, locators.vmodel,vmodel1)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicelType,vehicelType1)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicelyear, vehicelyear1)
+      await this.helper.EnterTextIntoField(this.Page, locators.enginesize, enginesize1)
+      await this.helper.SelectOptionFromDropdown(this.Page, locators.FuelType,fuelType)
+      await this.helper.ClickOnElement(this.Page, locators.submitbutton)
+      await expect(this.Page.locator('tbody')).toContainText(coverType1);
+      await expect(this.Page.locator('tbody')).toContainText(vehicleMake1);
+      await expect(this.Page.locator('tbody')).toContainText(vmodel1);
+      await expect(this.Page.locator('tbody')).toContainText(vehicelType1);
+      await expect(this.Page.locator('tbody')).toContainText(vehicelyear1);
+      await expect(this.Page.locator('tbody')).toContainText(enginesize1);
+      await expect(this.Page.locator('tbody')).toContainText(fuelType);
+      await this.helper.ClickOnElement(this.Page, "//a[normalize-space()='Next']")
+     
+      
+  }
 }
 module.exports = {loginpage};

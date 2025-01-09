@@ -20,7 +20,26 @@
               "VehicleYear": "2021",
               "Enginesize": "1800",
               "FuelType": "Gas"
-          }],
+          },
+          {
+            "CoverData": "Third Party Only",
+              "VehicleMake": "BMW",
+              "VehicleModel": "BMW V3",
+              "VehicleType": "Sedan",
+              "VehicleYear": "2021",
+              "Enginesize": "1800",
+              "FuelType": "Gas"
+          },{
+            "CoverData": "Third Party Only",
+              "VehicleMake": "AUDI",
+              "VehicleModel": "AUDI V3",
+              "VehicleType": "Sedan",
+              "VehicleYear": "2021",
+              "Enginesize": "1800",
+              "FuelType": "Gas"
+          }
+          
+        ],
 
       "DriverDetails":[{
               "Drivertype": "Owner",
@@ -53,6 +72,23 @@
               "VehicleYear": "2020",
               "Enginesize": "1600",
               "FuelType": "Hybrid"
+          },
+          {
+            "CoverData": "Third Party Only",
+              "VehicleMake": "Toyota",
+              "VehicleModel": "Corolla",
+              "VehicleType": "Sedan",
+              "VehicleYear": "2021",
+              "Enginesize": "1800",
+              "FuelType": "Gas"
+          },{
+            "CoverData": "Third Party Only",
+              "VehicleMake": "AUDI",
+              "VehicleModel": "AUDI V3",
+              "VehicleType": "Sedan",
+              "VehicleYear": "2021",
+              "Enginesize": "1800",
+              "FuelType": "Gas"
           }
       ],
       "DriverDetails": [

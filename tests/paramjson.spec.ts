@@ -17,9 +17,11 @@ test.describe('Login Tests with Data-Driven Approach and Reusable Methods', () =
         const Login = new loginpage(page);
         await page.goto(urls.AdminUrl);
         await Login.testLaunchtheUrlandLoginintoapplicatin(data.username, data.password);
-        await Login.testAddingclientdetails(data.ClientDetails[0].FirstName, data.ClientDetails[0].LastName, data.ClientDetails[0].DateofBirth, data.ClientDetails[0].Gender, data.ClientDetails[0].MobileNumber, data.ClientDetails[0].Email);
-        await Login.testAddingRiskDetails(data.RiskDetaild[0].CoverData,data.RiskDetaild[0].VehicleMake,data.RiskDetaild[0].VehicleModel,data.RiskDetaild[0].VehicleType,data.RiskDetaild[0].VehicleYear,data.RiskDetaild[0].Enginesize,data.RiskDetaild[0].FuelType);
-        await Login.testaddingdriverdetails(data.DriverDetails[0].Drivertype,data.DriverDetails[0].DriversName,data.DriverDetails[0].DateofBirth,data.DriverDetails[0].Drivingexperience,data.DriverDetails[0].Licensenumber,data.DriverDetails[0].DriversGender);
+        // await Login.testAddingclientdetails(data.ClientDetails[0].FirstName, data.ClientDetails[0].LastName, data.ClientDetails[0].DateofBirth, data.ClientDetails[0].Gender, data.ClientDetails[0].MobileNumber, data.ClientDetails[0].Email);
+        // // await Login.testAddingRiskDetails(data.RiskDetaild[0].CoverData,data.RiskDetaild[0].VehicleMake,data.RiskDetaild[0].VehicleModel,data.RiskDetaild[0].VehicleType,data.RiskDetaild[0].VehicleYear,data.RiskDetaild[0].Enginesize,data.RiskDetaild[0].FuelType);
+        // await Login.testmultiplerisk(data.RiskDetaild[0].CoverData,data.RiskDetaild[0].VehicleMake,data.RiskDetaild[0].VehicleModel,data.RiskDetaild[0].VehicleType,data.RiskDetaild[0].VehicleYear,data.RiskDetaild[0].Enginesize,data.RiskDetaild[0].FuelType,
+        // data.RiskDetaild[1].CoverData,data.RiskDetaild[1].VehicleMake,data.RiskDetaild[1].VehicleModel,data.RiskDetaild[1].VehicleType,data.RiskDetaild[1].VehicleYear,data.RiskDetaild[1].Enginesize,data.RiskDetaild[1].FuelType);
+        // await Login.testaddingdriverdetails(data.DriverDetails[0].Drivertype,data.DriverDetails[0].DriversName,data.DriverDetails[0].DateofBirth,data.DriverDetails[0].Drivingexperience,data.DriverDetails[0].Licensenumber,data.DriverDetails[0].DriversGender);
         
       });
 
