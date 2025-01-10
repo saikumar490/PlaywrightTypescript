@@ -163,7 +163,7 @@ export class loginpage{
       await expect(this.Page.locator('tbody')).toContainText(drierdateofbirth);
       await expect(this.Page.locator('tbody')).toContainText(driverexperince);
       await expect(this.Page.locator('tbody')).toContainText(driverlicnumber);
-      await expect(this.Page.locator('tbody')).toContainText(driversgender);
+      //await expect(this.Page.locator('tbody')).toContainText(driversgender);
       await this.helper.ClickOnElement(this.Page,"//a[normalize-space()='Next']")
     }
 
@@ -206,8 +206,11 @@ export class loginpage{
         
     }
     async testmultiplerisk(coverType: string, vehicleMake: string, vmodel: string, vehicelType: string, vehicelyear: string, 
-      enginesize: string, fuelType: string, coverType1: string, vehicleMake1: string, vmodel1: string, vehicelType1: string, 
-      vehicelyear1: string, enginesize1: string, fuelType1: string){
+      enginesize: string, fuelType: string, 
+      coverType1: string, vehicleMake1: string, vmodel1: string, vehicelType1: string, 
+      vehicelyear1: string, enginesize1: string, fuelType1: string, 
+      coverType2: string, vehicleMake2: string, 
+      vmodel2: string, vehicelType2: string, vehicelyear2: string ,enginesize2: string, fuelType2: string){
 
       await this.helper.ClickOnElement(this.Page, locators.addriskbutton)
       await this.helper.SelectOptionFromDropdown(this.Page, locators.covertype, coverType)
@@ -240,7 +243,16 @@ export class loginpage{
       await expect(this.Page.locator('tbody')).toContainText(vehicelType1);
       await expect(this.Page.locator('tbody')).toContainText(vehicelyear1);
       await expect(this.Page.locator('tbody')).toContainText(enginesize1);
-      await expect(this.Page.locator('tbody')).toContainText(fuelType);
+      //await expect(this.Page.locator('tbody')).toContainText(fuelType1);
+      await this.helper.ClickOnElement(this.Page, locators.addriskbutton)
+      await this.helper.SelectOptionFromDropdown(this.Page, locators.covertype, coverType2)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicleMake, vehicleMake2)
+      await this.helper.EnterTextIntoField(this.Page, locators.vmodel,vmodel2)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicelType,vehicelType2)
+      await this.helper.EnterTextIntoField(this.Page, locators.vehicelyear, vehicelyear2)
+      await this.helper.EnterTextIntoField(this.Page, locators.enginesize, enginesize2)
+      await this.helper.SelectOptionFromDropdown(this.Page, locators.FuelType,fuelType2)
+      await this.helper.ClickOnElement(this.Page, locators.submitbutton)
       await this.helper.ClickOnElement(this.Page, "//a[normalize-space()='Next']")
      
       

@@ -11,5 +11,8 @@
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.5",
     "allure-playwright": "^3.0.8"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
   }
 }
